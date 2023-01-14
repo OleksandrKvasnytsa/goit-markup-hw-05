@@ -78,30 +78,61 @@ ul,ol {
 }
 .header-navigation {
         display: flex;
-        
-        
+            
 }
 .header-list {  
         display: flex;
         margin-left: 76px;
         gap: 40px;
-        
 }
 .header-item {
+        
 }
 .header-link {
+        position: relative;
         font-weight: 700;
         font-size: 16px;
         line-height: 1.5;
         letter-spacing: 0.02em;
         color: #2E2F42;
+        transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .header-link:hover,
 .header-link:focus {
         color: #434455;
 }
 .header-link:active {
-        color: #4D5AE5;
+        color: #404BBF;
+}
+.header-link.studio {
+        color: #404BBF;
+}
+.header-link.studio::after {
+        position: absolute;
+        left: 0;
+        bottom: -24px;
+        content: '';
+        display: block;
+        width: 100%;
+        height: 4px;
+        background-color: #404BBF;
+        border-radius: 2px;
+        transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.header-link.portfolio {
+        color: #404BBF;
+}
+.header-link.portfolio::after {
+        position: absolute;
+        left: 0;
+        bottom: -24px;
+        content: '';
+        display: block;
+        width: 100%;
+        height: 4px;
+        background-color: #404BBF;
+        border-radius: 2px;
+        transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .contact-info {
         margin-left: auto;
@@ -113,8 +144,10 @@ ul,ol {
         letter-spacing: 0.02em;
         color: #434455;
         margin-right: 40px;
+        transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.header-mail:hover {
+.header-mail:hover,
+.header-mail:focus {
     color: #4D5AE5;
 }
 .header-tel {
@@ -123,8 +156,10 @@ ul,ol {
         line-height: 1.5;
         letter-spacing: 0.02em;
         color: #434455;
+        transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.header-tel:hover {
+.header-tel:hover,
+.header-tel:focus {
     color: #4D5AE5;
 }
 
@@ -171,6 +206,7 @@ ul,ol {
         cursor: pointer;
         border-radius: 4px;
         border: none;
+        transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .slogan-btn:focus,
 .slogan-btn:hover {
@@ -329,6 +365,7 @@ ul,ol {
         align-items: center;
         justify-content: center;
         fill: #F4F4FD;
+        transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .team-soc-link:hover,
 .team-soc-link:focus {
@@ -362,6 +399,7 @@ ul,ol {
         height: 88px;
         border: 1px solid #8E8F99;
         border-radius: 4px;
+        transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .customers-item:hover,
@@ -376,6 +414,7 @@ ul,ol {
         align-items: center;
         justify-content: center;
         fill: #AFB1B8;
+        transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .customers-link:hover,
@@ -440,7 +479,7 @@ ul,ol {
         font-style: normal;
         font-weight: 500;
         font-size: 16px;
-        line-height: 24px;
+        line-height: 1.5;
         letter-spacing: 0.02em;
         color: #FFFFFF;
         margin-bottom: 16px;
@@ -465,6 +504,7 @@ ul,ol {
         align-items: center;
         justify-content: center;
         fill: #F4F4FD;
+        transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .soc-media-link:hover,
@@ -512,6 +552,7 @@ ul,ol {
         border-radius: 4px;
         min-width: 69px;
         min-height: 48px;
+        transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .service-nav-btn:hover,
@@ -534,6 +575,29 @@ ul,ol {
 .service-item {
         margin-right: 24px;
         margin-bottom: 48px;
+        transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1) box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.service-item:hover .service-over-text {
+        transform: translateY(0%);
+}
+.service-over-wrap {
+        position: relative;
+        overflow: hidden;
+}
+.service-over-text {
+        position: absolute;
+        top: 0;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 1.5;
+        letter-spacing: 0.02em;
+        color: #F4F4FD;
+        padding: 40px 32px 164px;
+        background-color: #4D5AE5;
+        height: 100%;
+        transform: translateY(100%);
+        transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .service-item:hover,
 .service-item:focus {
@@ -576,3 +640,55 @@ ul,ol {
         padding-bottom: 32px;
         padding-left: 16px;
 }
+.backdrop {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(46, 47, 66, 0.4);
+        transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1), pointer-events 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 408px;
+        min-height: 576px;
+        background-color: #FCFCFC;
+        box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
+        border-radius: 4px;
+        transform: translate(-50%, -50%) scaleY(1);
+        transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.backdrop.is-hidden .modal {
+        transform: translate(-50%, -50%) scaleY(0);
+}
+.modal-close {
+        position: absolute;
+        right: 24px;
+        top: 24px;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background-color: #E7E9FC;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        fill: #000000;
+}
+.modal-close:hover,
+.modal-close:focus {
+        background-color: #404BBF;
+        fill: #FFFFFF;
+}
+.modal-close-icon {}
+
+.is-hidden {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+}
+

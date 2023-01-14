@@ -12,31 +12,33 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
         integrity="sha512-wpPYUAdjBVSE4KJnH1VR1HeZfpl1ub8YT/NKx4PuQ5NmX2tKuGu6U/JRp5y+Y8XG2tV+wKQpNHVUX03MfMFn9Q=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>goit-markup-hw-01</title>
+    <title>Web Studio</title>
 </head>
 <body class="site-body">
 <header class="site-header">
     <div class="container header-container">
-            <a href="Web Studio" class="web-studio-link link">Web <span class="link-studio">Studio</span></a>
-            <nav class="header-navigation">
-                <ul class="header-list list">
-                    <li class="header-item"><a class="header-link link" href="Studio">Studio</a> </li>
-                    <li class="header-item"><a class="header-link link" href="./portfolio.html" target="_blank"
+        <a href="Web Studio" class="web-studio-link link">Web <span class="link-studio">Studio</span></a>
+        <nav class="header-navigation">
+            <ul class="header-list list">
+                <li class="header-item"><a class="header-link studio link" href="./index.html" target="_blank"
+                        rel="noopener norefferer nofollow">Studio</a> </li>
+                <li class="header-item"><a class="header-link link" href="./portfolio.html" target="_blank"
                         rel="noopener norefferer nofollow">Portfolio</a> </li>
-                    <li class="header-item"><a class="header-link link" href="Contacts">Contacts</a> </li>
-                </ul>
-            </nav>
-            <div class="contact-info">
-                <a class="header-mail link" href="mailto:info@devstudio.com">info@devstudio.com</a>
-                <a class="header-tel link" href="tel:+110001111111">+11 (000) 111-11-11</a>
-            </div>
+                <li class="header-item"><a class="header-link contacts link" href="Contacts" target="_blank"
+                        rel="noopener norefferer nofollow">Contacts</a> </li>
+            </ul>
+        </nav>
+        <div class="contact-info">
+            <a class="header-mail link" href="mailto:info@devstudio.com">info@devstudio.com</a>
+            <a class="header-tel link" href="tel:+110001111111">+11 (000) 111-11-11</a>
+        </div>
     </div>
 </header>
 <main>
 <section class="slogan">
     <div class="container">
         <h1 class="slogan-title">Effective Solutions <br> for Your Business</h1>
-        <button class="slogan-btn" type="button">Order Service</button>
+        <button class="slogan-btn" type="button" data-modal-open>Order Service</button>
     </div>
 </section>  
 <div class="content">
@@ -335,5 +337,15 @@
         </ul>
     </section>
 </footer>
+<div class="backdrop is-hidden" data-modal>
+    <div class="modal">
+        <button type="button" class="modal-close" data-modal-close>
+            <svg class="modal-close-icon" width="8px" height="8px">
+                <use href="./images/icons.svg#icon-close-black"></use>
+            </svg>
+        </button>
+    </div>
+</div>
+<script src="./js/modal.js"></script>
 </body>
 </html>
